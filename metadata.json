@@ -1,0 +1,5 @@
+{
+  "name": "Librería Inteligente",
+  "description": "Una aplicación de gestión de bibliotecas moderna con capacidades de IA para autocompletar detalles de libros, gestión de usuarios y catálogo público.",
+  "requestFramePermissions": []
+}
