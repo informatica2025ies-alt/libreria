@@ -1,6 +1,14 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = 'https://subaioyyauyaxcspiifm.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN1YmFpb3l5YXV5YXhjc3BpaWZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ0MjU5NTEsImV4cCI6MjA4MDAwMTk1MX0.abr4azy7JFTgJyXufKaMhW1Mq7qrP_YmQ25MOxoxvoc';
+// Estas variables ahora deben ser configuradas en Vercel
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+// Se recomienda una verificación para evitar un fallo en tiempo de ejecución
+if (!supabaseUrl || !supabaseKey) {
+  // Nota: Esta línea causará que el programa se detenga si faltan las variables.
+  // Si la aplicación se detiene aquí, verás el error en la consola del navegador.
+  throw new Error('Supabase URL o Key está faltando de las Variables de Entorno.');
+}
 
 export const supabase = createClient(supabaseUrl, supabaseKey);
