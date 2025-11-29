@@ -2,7 +2,7 @@ import { GoogleGenAI, Type, Schema } from "@google/genai";
 import { GeneratedBookDetails } from "../types";
 
 // Ensure API key is available
-const apiKey = process.env.API_KEY || '';
+const apiKey = import.meta.env.VITE_API_KEY || '';
 
 const ai = new GoogleGenAI({ apiKey });
 
